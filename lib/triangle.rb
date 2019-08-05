@@ -14,7 +14,8 @@ class Triangle
       :isosceles
     elsif
       :scalene
-    elsif a <= 0
+    elsif a <= 0 || b <= 0 || c <=0 
+      raise TriangleError
       
     end
   end

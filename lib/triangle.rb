@@ -8,13 +8,18 @@ class Triangle
   end
 
   def kind
+    validate_triangle
     if a == b && b == c
       :equilateral
     elsif a == b || b == c || a == c
       :isosceles
-    elsif
+    else
       :scalene
-    elsif a <= 0 || b <= 0 || c <=0 
+    end
+  end
+  
+  def validate_triangle
+    if a <= 0 || b <= 0 || c <=0 
       raise TriangleError
     else (a + b) < c || (a + c) <= b || (b + c) < a 
       raise TriangleError
